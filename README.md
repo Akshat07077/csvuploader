@@ -1,4 +1,3 @@
-```markdown
 # CSV File Management System
 
 ## Table of Contents
@@ -48,8 +47,8 @@ The CSV File Management System is a web application built with Django that allow
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/csv-file-management-system.git
-   cd csv-file-management-system
+   git clone https://github.com/Akshat/csvuploader.git
+   cd csvuploader
    ```
 
 2. Create a virtual environment:
@@ -75,7 +74,7 @@ The CSV File Management System is a web application built with Django that allow
 4. Install the required dependencies:
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r r.txt
    ```
 
 5. Run database migrations:
@@ -156,11 +155,6 @@ The CSV File Management System is a web application built with Django that allow
 - `CSVForm`: Form for uploading CSV files.
 - `CSVUpdateForm`: Form for updating CSV file contents.
 
-## Serializers
-
-- `UserSerializer`: Serializer for user registration.
-- `LoginSerializer`: Serializer for user login.
-- `CSVFileSerializer`: Serializer for uploading and listing CSV files.
 
 ## Running Tests
 
@@ -169,10 +163,6 @@ To run the tests, use the following command:
 ```bash
 python manage.py test
 ```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
 
 ## License
 
