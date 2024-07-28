@@ -30,7 +30,6 @@ The CSV File Management System is a web application built with Django that allow
 - Add new rows and columns to CSV files
 - Export edited CSV files
 - Delete CSV files
-- Responsive design with Bootstrap
 
 ## Technology Stack
 
@@ -48,6 +47,6 @@ The CSV File Management System is a web application built with Django that allow
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/csv-file-management-system.git
-   cd csv-file-management-system
+   git clone https://github.com/yourusername/csvuploader.git
+   cd csvuploader
    ```
