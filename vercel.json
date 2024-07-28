@@ -1,10 +1,18 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "manage.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb" } },
-    { "src": "build_files.sh", "use": "@vercel/static-build", "config": {} }
-  ],
+  "functions": {
+    "api/index.py": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
   "routes": [
-    { "src": "/(.*)", "dest": "manage.py" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
   ]
 }
