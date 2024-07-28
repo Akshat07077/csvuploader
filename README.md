@@ -10,11 +10,10 @@
 6. [API Endpoints](#api-endpoints)
 7. [Models](#models)
 8. [Forms](#forms)
-9. [Serializers](#serializers)
-10. [Running Tests](#running-tests)
-11. [Contributing](#contributing)
-12. [License](#license)
-13. [Acknowledgements](#acknowledgements)
+9 [Running Tests](#running-tests)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Acknowledgements](#acknowledgements)
 
 ## Introduction
 
@@ -173,4 +172,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Django: [https://www.djangoproject.com/](https://www.djangoproject.com/)
 - Bootstrap: [https://getbootstrap.com/](https://getbootstrap.com/)
 - Django REST Framework: [https://www.django-rest-framework.org/](https://www.django-rest-framework.org/)
-```
+
