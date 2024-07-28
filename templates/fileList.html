@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<div
+  id="main-list"
+  style="
+    height: 100vh;
+    background-repeat: repeat;
+    background-image: url('https://images.unsplash.com/photo-1588421357538-7c22591e4f90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  "
+>
+  <div
+    id="headings-files"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <h2
+      style="
+        margin-top: 50px;
+        color: rgb(255, 255, 255);
+        margin-bottom: 10px;
+        text-align: center;
+      "
+    >
+      Your Uploaded Files
+    </h2>
+    <div id="line"></div>
+  </div>
+
+  {% if page_obj %}
+  <div class="containerr">
+    <div class="file-list">
+      {% for file in page_obj %}
+      <div class="file-card">
+        <h5 title="{{ file.file.name }}">
+          {{ file.file.name|truncatechars:20 }}
+        </h5>
+        <p>Uploaded on: {{ file.uploaded_at }}</p>
+        <a href="{% url 'view_csv' file.id %}" class="btn">View</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="pagination">
+    <span class="step-links">
+      {% if page_obj.has_previous %}
+      <a href="?page=1">&laquo; first</a>
+      <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+
+      <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.paginator.num_pages }}">next &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+</div>
+
+{% else %}
+<p style="font-size: larger; color: white; margin-left: 38%; margin-top: 25px">
+  You have not uploaded any files yet.
+</p>
+
+{% endif %} {% endblock %}

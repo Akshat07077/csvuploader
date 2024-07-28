@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block content %} {%load static%}
+<style>
+  .left-to-right {
+    font-size: large;
+
+    transition: 1s ease-in-out;
+  }
+  .glow {
+    font-size: 90px;
+    color: #18cbdf;
+    text-align: center;
+    animation: glow 0.5s linear infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(0, 119, 255, 0.8);
+    }
+  }
+</style>
+<section
+  id="home"
+  class="fullheight align-items-center bg-img bg-img-fixed"
+  style="
+    background-image: url('https://png.pngtree.com/background/20210712/original/pngtree-upload-download-transferring-data-and-lock-padlock-security-concept-from-connecting-picture-image_1171697.jpg');
+  "
+>
+  <div class="container-home">
+    <div class="row">
+      <div class="col-6 col-xs-12">
+        <div class="slogan">
+          <h1
+            class="left-to-right play-on-scroll"
+            style="
+              text-transform: capitalize;
+              width: 100%;
+              font-size: 90px;
+              margin-bottom: 10px;
+              color: #18cbdf;
+            "
+          >
+            Hey,<span class="glow">{{ user.username }}</span>
+          </h1>
+          <p
+            class="left-to-right play-on-scroll delay-2"
+            style="margin-left: 50px; color: white; width: 50%"
+          >
+            Effortlessly manage your CSV files with our intuitive web-based
+            application. Upload, view, and edit your CSV data with ease. Whether
+            you're organizing data for a project or managing records, our system
+            provides a seamless experience with robust features and a
+            user-friendly interface.
+          </p>
+          <div
+            class="left-to-right play-on-scroll delay-4"
+            style="margin-left: 50px"
+          >
+            <button
+              style="width: 40%; height: 60px; padding: 10px"
+              type="submit"
+            >
+              <a
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+                href="{% url 'upload_file' %} "
+                >Upload Now</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

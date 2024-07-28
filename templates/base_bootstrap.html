@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="shortcut icon" href="{% static "img/icon.png" %}"
+    type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>CSV Upload App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    .navv a {
+      text-decoration: none;
+    }
+    .navv {
+      justify-content: space-between;
+      height: 100px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+      background-color: var(--background-color);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .p-4 {
+      height: 100%;
+    }
+
+    .menu-wrap {
+      max-width: 1366px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 1rem;
+    }
+
+    .logo {
+      margin-right: 250px;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .menu {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-item {
+      margin-left: 1rem;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      color: var(--grey);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+      color: var(--white);
+      background-color: var(--primary-color);
+      border-radius: 1rem;
+    }
+  </style>
+  <body>
+    <div class="navv">
+      <div class="menu-wrap">
+        <a href="{% url 'home' %}">
+          <div class="logo">CSV Uploader</div>
+        </a>
+        {% if user.is_authenticated %}
+        <div class="menu h-xs">
+          <a href="{% url 'home' %}">
+            <div class="menu-item active">Home</div>
+          </a>
+          <a href="{% url 'file_list' %}">
+            <div class="menu-item">Files</div>
+          </a>
+          <a href="{% url 'upload_file' %}">
+            <div class="menu-item">Upload</div>
+          </a>
+          <a href="{% url 'logout' %}">
+            <div class="menu-item">Logout</div>
+          </a>
+          {% else %}
+          <a href="{% url 'login' %}">
+            <div class="menu-item">Login</div>
+          </a>
+          <a href="{% url 'signup' %}">
+            <div class="menu-item">Sign Up</div>
+          </a>
+          {% endif %}
+        </div>
+        <div class="right-menu">
+          <div class="cart-btn">
+            <i class="bx bx-cart-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="container">
+      <div class="bootstrap-scoped">{% block content %} {% endblock %}</div>
+    </main>
+    {% comment %}
+    <section class="footer bg-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-xs-12">
+            <h1>Freshfood</h1>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Incidunt, quas harum? Atque eius quaerat fuga sint molestiae illo
+              corrupti vitae voluptatibus. Dicta rerum est delectus perspiciatis
+              nemo nihil autem! Doloremque?
+            </p>
+            <br />
+            <p>Email: example@mail.com</p>
+            <p>Phone: +00 123 456 789</p>
+            <p>Website: freshfood.com</p>
+          </div>
+          <div class="col-2 col-xs-12">
+            <h1>About us</h1>
+            <br />
+            <p>
+              <a href="#"> Chefs </a>
+            </p>
+            <p>
+              <a href="#"> Menu </a>
+            </p>
+            <p>
+              <a href="#"> Testimonials </a>
+            </p>
+            <p>
+              <a href="#"> Lorem ipsum </a>
+            </p>
+          </div>
+          <div class="col-4 col-xs-12">
+            <h1>Subscribe & media</h1>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
+              aspernatur doloremque rerum nam ullam obcaecati error asperiores
+              temporibus quo eum eaque sed odio vitae accusantium, dolorem nihil
+              molestiae deserunt maxime!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

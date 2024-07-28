@@ -1,0 +1,9 @@
+Create a website in Django where users can log in/sign up and upload a CSV file. After uploading, all the data should be displayed in a table where users can update or insert new rows. The webpage should also have an export button to export the CSV file with the latest data. Please consider the following points while creating this app:
+
+1. The UI should be well-designed, as it will affect your final score.
+2. Pagination should be added if there are more than 10 files uploaded by a user.
+
+Bonus points:
+- Create APIs for login and signup.
+- Create an API endpoint to upload a CSV file.
+- Allow adding new columns and storing them in the database.

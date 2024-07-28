@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<style>
+  .container-edit {
+    padding: 60px;
+    max-width: 800px;
+    margin-top: 70px;
+    margin-left: 25%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+</style>
+<div class="container-edit">
+  <h2 style="text-align: center; color: rgb(95, 160, 145)">Edit CSV Row</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="row_data">Row Data (comma-separated):</label>
+      {{ form.row_data }}
+      <label for="col_data">Column Name (Optional) (comma-separated):</label>
+      {{ form.column_name }}
+    </div>
+    <div class="form-group">
+      <button type="submit">Update Row</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

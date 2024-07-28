@@ -1,0 +1,131 @@
+{% extends "base_bootstrap.html" %} {% block content %}
+<style></style>
+<div
+  id="main-view"
+  class="p-4"
+  style="background-size: cover; background-position: center"
+>
+  <div
+    class="container border border-success p-4"
+    style="border-radius: 15px; background-color: rgba(255, 255, 255, 0.9)"
+  >
+    <h2 class="text-center text-primary py-4">
+      View and Edit CSV File
+      <div
+        class="mx-auto bg-dark"
+        id="line"
+        style="width: 10%; height: 2px"
+      ></div>
+    </h2>
+
+    <div class="text-right w-48 mb-3">
+      <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#addRowColumnModal"
+      >
+        Add New Row/Column
+      </button>
+    </div>
+    <div class="text-center">
+      <a
+        type="button"
+        href="{% url 'exportCsv' file_id %}"
+        class="btn btn-success"
+        style="width: 30%; background-color: green; border-radius: 40px"
+        >Export CSV</a
+      >
+    </div>
+    <div class="table-responsive bg-white p-4 rounded">
+      <table class="table table-bordered">
+        <thead>
+          <!-- <tr>
+            {% for column in columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+            <th>Actions</th>
+          </tr> -->
+        </thead>
+        <tbody>
+          <a
+            href="{% url 'delete_csv' file_id %}"
+            class="btn btn-danger btn-sm"
+            style="margin-bottom: 20px"
+            onclick="return confirm('Are you sure you want to delete this file?');"
+            >Delete</a
+          >
+          {% for row in data %}
+          <tr
+            {%
+            if
+            forloop.counter0|divisibleby:2
+            %}class="table-secondary"
+            {%
+            endif
+            %}
+          >
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+            <td>
+              <a
+                href="{% url 'edit_csv_row' file_id forloop.counter0 %}"
+                class="btn btn-primary btn-sm"
+                >Edit</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-4">
+      <a
+        href="{% url 'exportCsv' file_id %}"
+        class="btn btn-success"
+        style="width: 30%; background-color: green; border-radius: 40px"
+        >Export CSV</a
+      >
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="addRowColumnModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addRowColumnModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRowColumnModalLabel">
+          Add New Row and Column
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <div class="text-center">
+            <button type="submit" class="btn btn-success" style="width: 50%">
+              Update CSV
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

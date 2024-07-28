@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<div
+  id="main-upload"
+  style="
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1636956026491-86a9da7001c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Ds');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div id="upload-container">
+    <div id="upload-section">
+      <h2>Upload CSV Files</h2>
+      <form method="post" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        <label for="file">Choose CSV files:</label>
+        {{ form.file }}
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

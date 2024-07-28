@@ -1,0 +1,483 @@
+:root {
+    --primary-color: #29abfc;
+    --background-color: #f0f3f7;
+    --secon-color: #9da2ad;
+    --grey: #7a7a7b;
+    --white: #ffffff;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav a {
+    color: unset;
+    text-decoration: none;
+}
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+body,
+html {
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container-home{
+        height: 100vh;
+            width: 100%;
+            max-width: 100%;
+    
+}
+.nav {
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: var(--background-color);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.menu-wrap {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo {
+            margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.menu {
+        margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item {
+    margin-left: 1rem;
+    padding: .5rem 1.5rem;
+    font-weight: 600;
+    color: var(--grey);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-img-fixed {
+    background-attachment: fixed;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+}
+.containerr {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 100%;
+}
+section {
+    padding: 9rem 0;
+}
+
+.slogan {
+    margin-left: 35px;
+    text-align: left;
+    margin-top: 10vh;
+}
+
+.slogan h1 {
+    padding: 50px;
+    font-size: 7rem;
+    color: var(--primary-color);
+}
+
+.slogan button {
+    padding: 1rem 5rem;
+    outline: none;
+    border: none;
+    background-color: var(--background-color);
+    border: .125rem solid var(--primary-color);
+    border-radius: 2rem;
+    color: white;
+    margin: 3rem 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s ease-in-out;
+}
+
+.slogan button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+form {
+    color: white;
+    align-content: center;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#upload {
+    padding: 50px;
+    width: 70vh;
+}
+
+#upload p,
+label {
+    font-size: large;
+    color: black;
+    background-color: #c5c6c700;
+}
+
+form input[type="file"],
+form input[type="text"],
+form input[type="email"],
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form button {
+    background: #35424a;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: #2ea8a2;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 20px 0;
+    position: relative;
+    color: aliceblue;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer ul li a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer h6 {
+    margin: 5px 0;
+}
+
+footer .fas {
+    margin-right: 8px;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-foot {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#left,
+#right {
+    flex: 1;
+}
+
+#left ul,
+#right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#right h6 {
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for file list page */
+.file-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.file-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.file-card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.file-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.file-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.file-card .btn:hover {
+    background-color: #0056b3;
+}
+#line{
+    height: 5px;
+    width: 40vh;
+    background: rgb(13, 201, 211);
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background: #ddd;
+    color: #35424a;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination a:hover,
+.pagination span.current {
+    background: #35424a;
+    color: #fff;
+}
+#main-list {
+    width: 100vw; /* Full viewport width */
+    background-color: var(--background-color);
+    padding: 20px;
+    margin: 0 auto; /* Center align if there's a max-width on the parent */
+}
+
+.file-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.file-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    position: relative;
+}
+
+.file-card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.file-card h5:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.file-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.file-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.file-card .btn:hover {
+    background-color: #0056b3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.pagination a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.pagination .current span {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+#upload-section {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+}
+#upload-container{
+    display: flex;
+    padding: 80px;
+    justify-content: center;
+}
+
+#upload-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#upload-section label {
+    display: block;
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 10px;
+}
+
+#upload-section input[type="file"] {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
+
+#upload-section button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#upload-section button:hover {
+    background-color: #0056b3;
+}
