@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "manage.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb" } },
+    { "src": "r.txt", "use": "@vercel/static-build", "config": {} }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "manage.py" }
+  ]
+}
